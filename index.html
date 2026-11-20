@@ -32,36 +32,25 @@
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.chip{border:1px solid var(--line);padding:5px 9px;color:#48564e;font:9px var(--mono)}.project-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px}.text-link{font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--forest);border-bottom:1px solid var(--rust);padding-bottom:4px}.text-link:hover{color:var(--rust)}
 .gallery{min-width:0}.gallery-main{height:410px;background:#e8e5dc;display:grid;place-items:center;overflow:hidden;position:relative}.gallery-main img{width:100%;height:100%;object-fit:contain;padding:16px}.gallery-main.photo img{object-fit:cover;padding:0}.gallery-main.dark{background:#172820}.gallery-main .gallery-note{position:absolute;left:14px;bottom:12px;background:var(--forest);color:white;padding:6px 9px;font:9px var(--mono);letter-spacing:.08em;text-transform:uppercase}.gallery-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}.thumb{padding:0;border:1px solid var(--line);background:#e8e5dc;aspect-ratio:1.35/1;cursor:pointer;overflow:hidden}.thumb img{width:100%;height:100%;object-fit:contain;padding:5px;transition:transform .25s}.thumb.photo img{object-fit:cover;padding:0}.thumb:hover img{transform:scale(1.04)}.thumb[aria-pressed=true]{outline:2px solid var(--rust);outline-offset:2px}
 .smarttrack-visual{background:var(--forest);color:#e8e9df;width:100%;height:100%;min-height:410px;padding:30px;display:flex;flex-direction:column;justify-content:space-between}.smarttrack-output{background:#f4f1e8;color:var(--ink);width:100%;height:100%;min-height:410px;padding:24px;display:flex;flex-direction:column;justify-content:center;gap:10px}.output-head,.output-foot{font:9px var(--mono);letter-spacing:.09em;color:var(--rust);display:flex;justify-content:space-between;gap:10px}.output-day{display:grid;grid-template-columns:45px 1fr;gap:3px 12px;border-bottom:1px solid var(--line);padding:9px 0;font-size:11px}.output-day b{grid-row:span 2;font:10px var(--mono);color:var(--rust)}.output-day span{color:var(--muted)}.output-foot{margin-top:8px}.smart-thumb{display:flex;align-items:center;justify-content:center;gap:10px;font:10px var(--mono);color:var(--forest);background:var(--paper);padding:8px}.smart-thumb span{color:var(--rust)}.smart-thumb[aria-pressed=true]{outline:2px solid var(--rust);outline-offset:2px}.smarttrack-visual .big{font:600 clamp(42px,5vw,64px)/1 var(--serif);color:#e2a17f}.smarttrack-visual .mono-lines{font:10px/2 var(--mono);letter-spacing:.07em;color:#d2ddd4}.smarttrack-visual .bottom{font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#aebfb3}
-/* SmartTrack: readable presentation of a real program run */
-.gallery-main:has(.smarttrack-output){height:auto;min-height:410px;display:block;overflow:visible}
-.smarttrack-output{height:auto;min-height:0;display:block;padding:24px;background:#f4f1e8}
-.st-section{margin-top:17px;padding-top:13px;border-top:1px solid var(--line)}
-.st-label{font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--rust);margin-bottom:9px}
-.st-summary{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.st-summary>div,.st-pr-grid>div{display:flex;flex-direction:column;gap:5px}
-.st-summary b,.st-pr-grid>div>b{font:8px var(--mono);letter-spacing:.09em;color:var(--muted)}
-.st-summary span,.st-pr-grid span{font-size:10px;line-height:1.55;color:var(--ink)}
-.st-pr-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.st-pr-grid strong{font:10px var(--mono);color:var(--forest);margin-left:4px}
-.st-availability{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
-.st-availability span{font:8px/1.65 var(--mono);color:var(--muted);padding:7px 5px;background:#e9e7dd}
-.st-availability b{display:block;color:var(--forest);font-size:8px;margin-bottom:3px}
-.st-day{display:grid;grid-template-columns:76px minmax(0,1fr);gap:10px;padding:11px 0;border-bottom:1px solid var(--line)}
-.st-day>b{font:9px var(--mono);color:var(--rust);padding-top:2px}
-.st-day>div{display:flex;flex-direction:column;gap:4px}
-.st-day span{font:9px var(--mono);color:var(--muted);line-height:1.5}
-.st-day strong{font:500 11px/1.55 var(--sans);color:var(--ink)}
-.st-checkin{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:16px;padding:12px;background:var(--sage)}
-.st-checkin span{font:8px var(--mono);letter-spacing:.08em;color:var(--muted)}
-.st-checkin strong{font:600 10px var(--sans);color:var(--forest)}
-.smarttrack-output .output-foot{margin-top:14px;flex-wrap:wrap}
+/* SmartTrack: terminal-style view of the actual console interaction */
+.gallery-main:has(.smarttrack-output){height:auto;min-height:410px;display:block;overflow:visible;background:#111513;padding:0}
+.smarttrack-output{height:auto;min-height:0;display:block;padding:0;background:#111513;color:#e5e9e6;font:11px/1.55 var(--mono);overflow:hidden}
+.terminal-bar{height:34px;background:#252a27;color:#c2c9c4;display:flex;align-items:center;gap:7px;padding:0 13px;font:9px var(--mono);letter-spacing:.05em}
+.terminal-dot{width:7px;height:7px;border-radius:50%;background:#65736a;display:inline-block}
+.terminal-title{margin-left:7px}
+.terminal-screen{padding:20px 22px 24px;overflow-x:auto}
+.terminal-screen pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;color:#e5e9e6}
+.terminal-screen .prompt{color:#a9c9ad}
+.terminal-screen .section-line{color:#e2a17f}
+.terminal-screen .result{color:#dce9df}
+.terminal-screen .muted-line{color:#8d9a91}
+.smarttrack-output .output-foot{margin:0;padding:10px 22px;border-top:1px solid #303a34;color:#91a197;font:8px var(--mono);letter-spacing:.08em;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 @media(max-width:700px){
  .gallery-main:has(.smarttrack-output){min-height:0}
- .smarttrack-output{padding:16px}
- .st-availability{grid-template-columns:repeat(3,minmax(0,1fr))}
- .st-day{grid-template-columns:62px minmax(0,1fr);gap:7px}
- .st-day strong{font-size:10px}
- .st-checkin{align-items:flex-start;flex-direction:column;gap:4px}
+ .terminal-screen{padding:15px 13px}
+ .smarttrack-output{font-size:9px;line-height:1.55}
+ .terminal-bar{font-size:8px}
+ .smarttrack-output .output-foot{padding:9px 13px;font-size:7px}
 }
 
 .construction-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.construction-grid figure{margin:0;background:#e8e5dc;height:195px;overflow:hidden}.construction-grid figure:first-child{grid-row:span 2;height:400px}.construction-grid img{width:100%;height:100%;object-fit:cover}
@@ -168,31 +157,114 @@ footer{background:#112d24;color:#b9c9bd;padding:23px 0}.footer-inner{display:fle
 <div class="gallery-main dark">
 <div class="smarttrack-visual" data-smart-view="overview"><div class="eyebrow" style="color:#e2a17f">CS171 · Final project</div><div class="big" style="font-size:clamp(34px,4.2vw,54px)">SmartTrack<span style="color:#c7663e">.</span></div><div class="mono-lines">ATHLETE INPUTS<br>01 / AVAILABILITY<br>02 / EVENTS &amp; GOALS<br>03 / PERSONAL RECORDS<br><br>↓<br><br>WEEKLY TRAINING PLAN</div><div class="bottom">C++ · TRACK &amp; FIELD PLANNING</div></div>
 <div class="smarttrack-output" data-smart-view="output" hidden>
-  <div class="output-head"><span>SMARTTRACK / CS171</span><span>ACTUAL PROGRAM RUN</span></div>
-  <div class="st-section">
-    <div class="st-label">Athlete setup</div>
-    <div class="st-summary"><div><b>EVENTS</b><span>100m · Shot Put · Discus · Pole Vault</span></div><div><b>GOALS</b><span>Acceleration / Start · Speed</span></div></div>
-  </div>
-  <div class="st-section">
-    <div class="st-label">Personal records</div>
-    <div class="st-pr-grid"><div><b>EVENT</b><span>100m <strong>11.51</strong></span><span>Shot Put <strong>15.80m</strong></span><span>Discus <strong>48.00m</strong></span><span>Pole Vault <strong>4.10m</strong></span></div><div><b>GYM</b><span>Back Squat <strong>405 lb</strong></span><span>Bench Press <strong>275 lb</strong></span><span>Deadlift <strong>435 lb</strong></span><span>Clean <strong>295 lb</strong></span></div></div>
-  </div>
-  <div class="st-section">
-    <div class="st-label">Availability</div>
-    <div class="st-availability"><span><b>MON</b>10:10–12:00<br>15:00–17:00</span><span><b>TUE</b>09:30–12:00</span><span><b>WED</b>10:10–12:00<br>15:00–17:00</span><span><b>THU</b>09:30–12:00</span><span><b>FRI–SUN</b>Unavailable</span></div>
-  </div>
-  <div class="st-section">
-    <div class="st-label">Generated weekly workout plan</div>
-    <div class="st-day"><b>MONDAY</b><div><span>10:10–12:00 · Track</span><strong>100m — 4×15m kneeling starts</strong><span>15:00–17:00 · Track</span><strong>Shot Put — standing throws ×3–6; glide/rotational drills 3×5, emphasis on footwork</strong></div></div>
-    <div class="st-day"><b>TUESDAY</b><div><span>09:30–12:00 · Gym</span><strong>Back Squat @ 121.5 lb — 3×5</strong><span>Accessories: Hip Thrust — 3×10–15; Step-ups — 3×10–15</span></div></div>
-    <div class="st-day"><b>WEDNESDAY</b><div><span>10:10–12:00 · Track</span><strong>Discus — standing throws ×3–6; rotational drills 3×5, emphasis on footwork</strong><span>15:00–17:00 · Track</span><strong>Pole Vault — 4×80m sprints, build up the first 25m @ 90%</strong></div></div>
-    <div class="st-day"><b>THURSDAY</b><div><span>09:30–12:00</span><strong>Rest day</strong></div></div>
-  </div>
-  <div class="st-checkin"><span>WEEKLY WORKOUT CHECK-IN</span><strong>All workouts completed · Yes</strong></div>
-  <div class="output-foot"><span>REAL OUTPUT / SAMPLE RUN</span><span>ATHLETE INPUTS → WEEKLY PLAN → CHECK-IN</span></div>
+  <div class="terminal-bar"><i class="terminal-dot"></i><i class="terminal-dot"></i><i class="terminal-dot"></i><span class="terminal-title">SmartTrack — terminal session</span></div>
+  <div class="terminal-screen"><pre><span class="prompt">What events would you like to work on? (Select up to 4)</span>
+Enter the number of an event to select it.
+Enter 0 when done.
+  1. 60m
+  2. 100m
+  3. 200m
+  4. 400m
+  5. 800m
+  6. 1500m
+  7. 3000m
+  8. 60mh
+  9. 100/110mh
+ 10. 400mh
+ 11. Long Jump
+ 12. High Jump
+ 13. Triple Jump
+ 14. Pole Vault
+ 15. Shot Put
+ 16. Discus
+ 17. Javelin
+<span class="prompt">Choose event #1 (0 to finish): 2</span>
+<span class="result">Added: 100m</span>
+<span class="prompt">Choose event #2 (0 to finish): 15</span>
+<span class="result">Added: Shot Put</span>
+<span class="prompt">Choose event #3 (0 to finish): 16</span>
+<span class="result">Added: Discus</span>
+<span class="prompt">Choose event #4 (0 to finish): 14</span>
+<span class="result">Added: Pole Vault</span>
+<span class="prompt">What are your training goals? (Select up to 2)</span>
+Enter the number of a goal to select it.
+Enter 0 when done.
+  1. Acceleration/Start
+  2. Speed
+  3. Speed Endurance
+  4. Power
+  5. Technique
+  6. Strength
+<span class="prompt">Choose goal #1 (0 to finish): 1</span>
+<span class="result">Added: Acceleration/Start</span>
+<span class="prompt">Choose goal #2 (0 to finish): 2</span>
+<span class="result">Added: Speed</span>
+<span class="prompt">What are your PR's in your events? (In MM:SS.SS or meters)</span>
+  1. 100m: 11.51
+  2. Shot Put: 15.80
+  3. Discus: 48.00
+  4. Pole Vault: 4.10
+<span class="prompt">What are your PR's in the gym? (In pounds)</span>
+  Back Squat: 405
+  Bench Press: 275
+  Deadlift: 435
+  Clean: 295
+<span class="prompt">Enter your availability for each day.</span>
+  Monday available (Y/N)? y
+  Start time: 10:10
+  End time: 12:00
+  Add another availability window for Monday? y
+  Start time: 15:00
+  End time: 17:00
+  Add another availability window for Monday? n
+  Tuesday available (Y/N)? y
+  Start time: 9:30
+  End time: 12:00
+  Add another availability window for Tuesday? n
+  Wednesday available (Y/N)? y
+  Start time: 10:10
+  End time: 12:00
+  Add another availability window for Wednesday? y
+  Start time: 15:00
+  End time: 17:00
+  Add another availability window for Wednesday? n
+  Thursday available (Y/N)? y
+  Start time: 9:30
+  End time: 12:00
+  Add another availability window for Thursday? n
+  Friday available (Y/N)? n
+  Saturday available (Y/N)? n
+  Sunday available (Y/N)? n
+
+<span class="section-line">=== Weekly Workout Plan ===</span>
+Day: Monday
+  Window 1 (10:10 - 12:00):
+    Track: 100m (4x15m kneeling starts)
+  Window 2 (15:00 - 17:00):
+    Track: Shot Put (Standing throws x3-6, Glide/Rotational drills 3x5, emphasis on footwork)
+
+Day: Tuesday
+  Window 1 (09:30 - 12:00):
+    Gym: Back Squat @ 121.5 lbs, 3 sets x 5 reps
+      Accessory 1: Hip Thrust - 3 sets x 10-15 reps
+      Accessory 2: Step-ups - 3 sets x 10-15 reps
+
+Day: Wednesday
+  Window 1 (10:10 - 12:00):
+    Track: Discus (Standing throws x3-6, Rotational drills 3x5, emphasis on footwork)
+  Window 2 (15:00 - 17:00):
+    Track: Pole Vault (4x80 sprints, build up the first 25m @ 90%)
+
+Day: Thursday
+  Window 1 (09:30 - 12:00):
+    Rest day
+
+<span class="section-line">=== Weekly Workout Check-In ===</span>
+Did you complete all your workouts this week? (Y/N): y</pre></div>
+  <div class="output-foot"><span>ACTUAL CONSOLE INPUT &amp; OUTPUT</span><span>C++ · TERMINAL-BASED PROGRAM</span></div>
 </div>
 <span class="gallery-note">Program overview</span></div>
-<div class="gallery-thumbs"><button class="thumb smart-thumb" aria-pressed="true" data-view="overview"><span>01</span><b>Project overview</b></button><button class="thumb smart-thumb" aria-pressed="false" data-view="output"><span>02</span><b>Program output</b></button></div></div></div></div></section>
+<div class="gallery-thumbs"><button class="thumb smart-thumb" aria-pressed="true" data-view="overview"><span>01</span><b>Project overview</b></button><button class="thumb smart-thumb" aria-pressed="false" data-view="output"><span>02</span><b>Terminal output</b></button></div></div></div></div></section>
 
 <section class="project-section" id="construction"><div class="wrap project-layout reveal"><div class="project-copy"><div class="project-count">05 / Construction · Fabrication</div><h2>Construction &amp;<br>woodworking</h2><p class="lead">Hands-on experience building and finishing real projects, from residential construction to custom woodworking.</p><p>I've worked alongside my dad on residential construction and woodworking projects, including houses, sheds, wardrobes, cabinets, and bed frames. That work has built practical familiarity with measuring and layout, framing, cabinetry, flooring, drywall, and finishing.</p><div class="detail-block"><h3>Experience</h3><p>Residential construction, framing, woodworking, cabinetry, and interior finish work.</p></div><div class="detail-block"><h3>Why it matters</h3><p>Working with materials and physical constraints has shaped how I approach design, fit, build sequence, and practical problem-solving.</p></div><div class="detail-block"><h3>Photos</h3><p>Listing photos of finished homes I worked on.</p></div></div><div class="gallery" data-gallery><div class="gallery-main photo"><img src="images/house1-front.jpg" alt="Completed residential house exterior"><span class="gallery-note">Residential construction</span></div><div class="gallery-thumbs"><button class="thumb photo" aria-pressed="true" data-src="images/house1-front.jpg" data-alt="Completed residential house exterior" data-cap="Residential construction" aria-label="Residential construction"><img src="images/house1-front.jpg" alt=""></button><button class="thumb photo" aria-pressed="false" data-src="images/house1-rear.jpg" data-alt="Rear view of residential construction project" data-cap="Rear exterior" aria-label="Rear exterior"><img src="images/house1-rear.jpg" alt=""></button><button class="thumb photo" aria-pressed="false" data-src="images/house2-front.jpg" data-alt="Another residential construction project" data-cap="Second project" aria-label="Second project"><img src="images/house2-front.jpg" alt=""></button></div></div></div></section>
 
@@ -217,7 +289,7 @@ footer{background:#112d24;color:#b9c9bd;padding:23px 0}.footer-inner{display:fle
     const main=g.querySelector('.gallery-main'), note=g.querySelector('.gallery-note');
     g.querySelectorAll('.smart-thumb').forEach(btn=>btn.addEventListener('click',()=>{
       g.querySelectorAll('[data-smart-view]').forEach(view=>view.hidden=view.dataset.smartView!==btn.dataset.view);
-      note.textContent=btn.dataset.view==='output'?'Program output':'Program overview';
+      note.textContent=btn.dataset.view==='output'?'Terminal output':'Program overview';
       g.querySelectorAll('.smart-thumb').forEach(t=>t.setAttribute('aria-pressed',String(t===btn)));
     }));
   });
